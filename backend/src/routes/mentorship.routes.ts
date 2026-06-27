@@ -4,10 +4,12 @@ import { prisma } from '../lib/prisma';
 import { authenticate } from '../middleware/authenticate';
 import { authorize } from '../middleware/authorize';
 import { ROLES } from '../constants/roles';
+import { rateLimit } from '../middleware/rateLimit';
 
 const router = Router();
 
 router.use(authenticate);
+router.use(rateLimit(120, 60_000));
 
 router.get('/my-internships', authorize(ROLES.MENTOR), async (req, res) => {
   const internships = await prisma.internship.findMany({

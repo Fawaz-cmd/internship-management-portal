@@ -6,6 +6,7 @@ import { ROLES, type Role } from '../constants/roles';
 import { signAccessToken } from '../utils/jwt';
 import { authenticate } from '../middleware/authenticate';
 import { authorize } from '../middleware/authorize';
+import { rateLimit } from '../middleware/rateLimit';
 
 const router = Router();
 
@@ -49,7 +50,7 @@ router.post('/bootstrap-admin', async (req, res) => {
   return res.status(201).json({ token, user: { id: user.id, name: user.name, email: user.email, role: user.role } });
 });
 
-router.post('/register', authenticate, authorize(ROLES.ADMIN), async (req, res) => {
+router.post('/register', rateLimit(20, 60_000), authenticate, authorize(ROLES.ADMIN), async (req, res) => {
   const parsed = registerSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: parsed.error.flatten() });
@@ -75,7 +76,7 @@ router.post('/register', authenticate, authorize(ROLES.ADMIN), async (req, res) 
   });
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', rateLimit(20, 60_000), async (req, res) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: parsed.error.flatten() });
