@@ -28,9 +28,8 @@ const projectRateLimit = rateLimit({
 });
 
 router.use(authenticate);
-router.use(projectRateLimit);
 
-router.get('/', async (_req, res) => {
+router.get('/', projectRateLimit, async (_req, res) => {
   const projects = await prisma.internship.findMany({
     include: {
       mentor: { select: { id: true, name: true, email: true } },
@@ -47,7 +46,7 @@ router.get('/', async (_req, res) => {
   return res.json({ projects });
 });
 
-router.post('/', authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD), async (req, res) => {
+router.post('/', projectRateLimit, authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD), async (req, res) => {
   const parsed = createProjectSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: parsed.error.flatten() });
@@ -63,24 +62,29 @@ router.post('/', authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD), async (r
   return res.status(201).json({ project });
 });
 
-router.post('/:internshipId/members', authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD), async (req, res) => {
-  const body = addMemberSchema.safeParse(req.body);
-  if (!body.success) {
-    return res.status(400).json({ message: body.error.flatten() });
+router.post(
+  '/:internshipId/members',
+  projectRateLimit,
+  authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD),
+  async (req, res) => {
+    const body = addMemberSchema.safeParse(req.body);
+    if (!body.success) {
+      return res.status(400).json({ message: body.error.flatten() });
+    }
+
+    const internshipId = z.string().uuid().safeParse(req.params.internshipId);
+    if (!internshipId.success) {
+      return res.status(400).json({ message: 'Invalid internship id' });
+    }
+
+    const membership = await prisma.internshipMember.upsert({
+      where: { internshipId_userId: { internshipId: internshipId.data, userId: body.data.userId } },
+      create: { internshipId: internshipId.data, userId: body.data.userId },
+      update: {}
+    });
+
+    return res.status(201).json({ membership });
   }
-
-  const internshipId = z.string().uuid().safeParse(req.params.internshipId);
-  if (!internshipId.success) {
-    return res.status(400).json({ message: 'Invalid internship id' });
-  }
-
-  const membership = await prisma.internshipMember.upsert({
-    where: { internshipId_userId: { internshipId: internshipId.data, userId: body.data.userId } },
-    create: { internshipId: internshipId.data, userId: body.data.userId },
-    update: {}
-  });
-
-  return res.status(201).json({ membership });
-});
+);
 
 export default router;

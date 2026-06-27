@@ -17,9 +17,8 @@ const mentorshipRateLimit = rateLimit({
 });
 
 router.use(authenticate);
-router.use(mentorshipRateLimit);
 
-router.get('/my-internships', authorize(ROLES.MENTOR), async (req, res) => {
+router.get('/my-internships', mentorshipRateLimit, authorize(ROLES.MENTOR), async (req, res) => {
   const internships = await prisma.internship.findMany({
     where: { mentorId: req.user!.userId },
     include: {
@@ -34,20 +33,25 @@ router.get('/my-internships', authorize(ROLES.MENTOR), async (req, res) => {
   return res.json({ internships });
 });
 
-router.patch('/:internshipId/assign-mentor', authorize(ROLES.ADMIN, ROLES.TEAM_LEAD), async (req, res) => {
-  const internshipId = z.string().uuid().safeParse(req.params.internshipId);
-  const payload = z.object({ mentorId: z.string().uuid() }).safeParse(req.body);
+router.patch(
+  '/:internshipId/assign-mentor',
+  mentorshipRateLimit,
+  authorize(ROLES.ADMIN, ROLES.TEAM_LEAD),
+  async (req, res) => {
+    const internshipId = z.string().uuid().safeParse(req.params.internshipId);
+    const payload = z.object({ mentorId: z.string().uuid() }).safeParse(req.body);
 
-  if (!internshipId.success || !payload.success) {
-    return res.status(400).json({ message: 'Invalid payload' });
+    if (!internshipId.success || !payload.success) {
+      return res.status(400).json({ message: 'Invalid payload' });
+    }
+
+    const internship = await prisma.internship.update({
+      where: { id: internshipId.data },
+      data: { mentorId: payload.data.mentorId }
+    });
+
+    return res.json({ internship });
   }
-
-  const internship = await prisma.internship.update({
-    where: { id: internshipId.data },
-    data: { mentorId: payload.data.mentorId }
-  });
-
-  return res.json({ internship });
-});
+);
 
 export default router;
