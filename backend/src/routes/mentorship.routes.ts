@@ -16,9 +16,7 @@ const mentorshipRateLimit = rateLimit({
   message: { message: 'Too many requests' }
 });
 
-router.use(authenticate);
-
-router.get('/my-internships', mentorshipRateLimit, authorize(ROLES.MENTOR), async (req, res) => {
+router.get('/my-internships', mentorshipRateLimit, authenticate, authorize(ROLES.MENTOR), async (req, res) => {
   const internships = await prisma.internship.findMany({
     where: { mentorId: req.user!.userId },
     include: {
@@ -36,6 +34,7 @@ router.get('/my-internships', mentorshipRateLimit, authorize(ROLES.MENTOR), asyn
 router.patch(
   '/:internshipId/assign-mentor',
   mentorshipRateLimit,
+  authenticate,
   authorize(ROLES.ADMIN, ROLES.TEAM_LEAD),
   async (req, res) => {
     const internshipId = z.string().uuid().safeParse(req.params.internshipId);

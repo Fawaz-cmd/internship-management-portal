@@ -27,9 +27,7 @@ const projectRateLimit = rateLimit({
   message: { message: 'Too many requests' }
 });
 
-router.use(authenticate);
-
-router.get('/', projectRateLimit, async (_req, res) => {
+router.get('/', projectRateLimit, authenticate, async (_req, res) => {
   const projects = await prisma.internship.findMany({
     include: {
       mentor: { select: { id: true, name: true, email: true } },
@@ -46,25 +44,32 @@ router.get('/', projectRateLimit, async (_req, res) => {
   return res.json({ projects });
 });
 
-router.post('/', projectRateLimit, authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD), async (req, res) => {
-  const parsed = createProjectSchema.safeParse(req.body);
-  if (!parsed.success) {
-    return res.status(400).json({ message: parsed.error.flatten() });
-  }
-
-  const project = await prisma.internship.create({
-    data: {
-      ...parsed.data,
-      createdById: req.user!.userId
+router.post(
+  '/',
+  projectRateLimit,
+  authenticate,
+  authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD),
+  async (req, res) => {
+    const parsed = createProjectSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ message: parsed.error.flatten() });
     }
-  });
 
-  return res.status(201).json({ project });
-});
+    const project = await prisma.internship.create({
+      data: {
+        ...parsed.data,
+        createdById: req.user!.userId
+      }
+    });
+
+    return res.status(201).json({ project });
+  }
+);
 
 router.post(
   '/:internshipId/members',
   projectRateLimit,
+  authenticate,
   authorize(ROLES.ADMIN, ROLES.MENTOR, ROLES.TEAM_LEAD),
   async (req, res) => {
     const body = addMemberSchema.safeParse(req.body);
