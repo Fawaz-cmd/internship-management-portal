@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
+import { rateLimit } from 'express-rate-limit';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma';
 import { ROLES, type Role } from '../constants/roles';
 import { signAccessToken } from '../utils/jwt';
 import { authenticate } from '../middleware/authenticate';
 import { authorize } from '../middleware/authorize';
-import { rateLimit } from '../middleware/rateLimit';
 
 const router = Router();
 
@@ -22,6 +22,14 @@ const registerSchema = z.object({
 const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8)
+});
+
+const authRateLimit = rateLimit({
+  windowMs: 60_000,
+  limit: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { message: 'Too many requests' }
 });
 
 router.post('/bootstrap-admin', async (req, res) => {
@@ -50,7 +58,7 @@ router.post('/bootstrap-admin', async (req, res) => {
   return res.status(201).json({ token, user: { id: user.id, name: user.name, email: user.email, role: user.role } });
 });
 
-router.post('/register', rateLimit(20, 60_000), authenticate, authorize(ROLES.ADMIN), async (req, res) => {
+router.post('/register', authRateLimit, authenticate, authorize(ROLES.ADMIN), async (req, res) => {
   const parsed = registerSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: parsed.error.flatten() });
@@ -76,7 +84,7 @@ router.post('/register', rateLimit(20, 60_000), authenticate, authorize(ROLES.AD
   });
 });
 
-router.post('/login', rateLimit(20, 60_000), async (req, res) => {
+router.post('/login', authRateLimit, async (req, res) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ message: parsed.error.flatten() });

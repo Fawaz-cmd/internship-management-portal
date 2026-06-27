@@ -1,10 +1,10 @@
 import { Router } from 'express';
+import { rateLimit } from 'express-rate-limit';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma';
 import { authenticate } from '../middleware/authenticate';
 import { authorize } from '../middleware/authorize';
 import { ROLES } from '../constants/roles';
-import { rateLimit } from '../middleware/rateLimit';
 
 const router = Router();
 
@@ -19,8 +19,16 @@ const addMemberSchema = z.object({
   userId: z.string().uuid()
 });
 
+const projectRateLimit = rateLimit({
+  windowMs: 60_000,
+  limit: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { message: 'Too many requests' }
+});
+
 router.use(authenticate);
-router.use(rateLimit(120, 60_000));
+router.use(projectRateLimit);
 
 router.get('/', async (_req, res) => {
   const projects = await prisma.internship.findMany({
