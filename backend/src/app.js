@@ -84,7 +84,9 @@ const startServer = async () => {
     await sequelize.authenticate();
     logger.info('Database connection established.');
 
-    await sequelize.sync();
+    // In development, sync creates tables if they don't exist (no alter/force).
+    // Run `npm run seed` after first launch to populate sample data.
+    await sequelize.sync({ force: false, alter: false });
     logger.info('Database synced.');
 
     app.listen(PORT, () => {
