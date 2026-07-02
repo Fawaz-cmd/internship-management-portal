@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MENTOR
+  TEAM_LEAD
+  INTERN
+}
+
+model User {
+  id                 String             @id @default(uuid())
+  email              String             @unique
+  name               String
+  passwordHash       String
+  role               Role               @default(INTERN)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  createdInternships Internship[]       @relation("CreatedBy")
+  mentoredInternships Internship[]      @relation("Mentor")
+  ledInternships     Internship[]       @relation("TeamLead")
+  memberships        InternshipMember[]
+}
+
+model Internship {
+  id            String             @id @default(uuid())
+  title         String
+  description   String
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  createdById   String
+  mentorId      String?
+  teamLeadId    String?
+  createdBy     User               @relation("CreatedBy", fields: [createdById], references: [id])
+  mentor        User?              @relation("Mentor", fields: [mentorId], references: [id])
+  teamLead      User?              @relation("TeamLead", fields: [teamLeadId], references: [id])
+  members       InternshipMember[]
+}
+
+model InternshipMember {
+  internshipId String
+  userId       String
+  assignedAt   DateTime   @default(now())
+  internship   Internship @relation(fields: [internshipId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([internshipId, userId])
+}

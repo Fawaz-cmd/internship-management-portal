@@ -1,0 +1,56 @@
+import { Router } from 'express';
+import { rateLimit } from 'express-rate-limit';
+import { z } from 'zod';
+import { prisma } from '../lib/prisma';
+import { authenticate } from '../middleware/authenticate';
+import { authorize } from '../middleware/authorize';
+import { ROLES } from '../constants/roles';
+
+const router = Router();
+
+const mentorshipRateLimit = rateLimit({
+  windowMs: 60_000,
+  limit: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { message: 'Too many requests' }
+});
+
+router.get('/my-internships', mentorshipRateLimit, authenticate, authorize(ROLES.MENTOR), async (req, res) => {
+  const internships = await prisma.internship.findMany({
+    where: { mentorId: req.user!.userId },
+    include: {
+      members: {
+        include: {
+          user: { select: { id: true, name: true, email: true, role: true } }
+        }
+      }
+    }
+  });
+
+  return res.json({ internships });
+});
+
+router.patch(
+  '/:internshipId/assign-mentor',
+  mentorshipRateLimit,
+  authenticate,
+  authorize(ROLES.ADMIN, ROLES.TEAM_LEAD),
+  async (req, res) => {
+    const internshipId = z.string().uuid().safeParse(req.params.internshipId);
+    const payload = z.object({ mentorId: z.string().uuid() }).safeParse(req.body);
+
+    if (!internshipId.success || !payload.success) {
+      return res.status(400).json({ message: 'Invalid payload' });
+    }
+
+    const internship = await prisma.internship.update({
+      where: { id: internshipId.data },
+      data: { mentorId: payload.data.mentorId }
+    });
+
+    return res.json({ internship });
+  }
+);
+
+export default router;
