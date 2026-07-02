@@ -12,6 +12,7 @@ export default function InternDashboard() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [checkedIn, setCheckedIn] = useState(false);
+  const [clockedOutToday, setClockedOutToday] = useState(false);
   const [clockLoading, setClockLoading] = useState(false);
 
   const loadDashboardData = async () => {
@@ -30,10 +31,11 @@ export default function InternDashboard() {
 
       setTasks(tasksRes.data?.tasks || []);
 
-      // Check if intern is currently clocked in today
+      // Check if intern is currently clocked in today or has already clocked out
       const todayStr = new Date().toISOString().split('T')[0];
       const todayRecord = (Array.isArray(records) ? records : []).find(r => r.date === todayStr);
       setCheckedIn(!!(todayRecord && todayRecord.checkIn && !todayRecord.checkOut));
+      setClockedOutToday(!!(todayRecord && todayRecord.checkIn && todayRecord.checkOut));
     } catch (err) {
       console.error('Failed to load dashboard data:', err);
     } finally {
@@ -51,9 +53,11 @@ export default function InternDashboard() {
       if (checkedIn) {
         await checkOut();
         setCheckedIn(false);
+        setClockedOutToday(true);
       } else {
         await checkIn();
         setCheckedIn(true);
+        setClockedOutToday(false);
       }
       const attendanceRes = await getAttendance();
       const records = attendanceRes.data?.records || attendanceRes.data || [];
@@ -103,15 +107,17 @@ export default function InternDashboard() {
         {/* Clock In / Out Button */}
         <button
           onClick={handleClockToggle}
-          disabled={clockLoading}
+          disabled={clockLoading || clockedOutToday}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all disabled:opacity-60 ${
-            checkedIn
+            clockedOutToday
+              ? 'bg-slate-500/20 text-slate-400 border border-slate-500/30 cursor-not-allowed'
+              : checkedIn
               ? 'bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/30'
               : 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-500/30'
           }`}
         >
           <Clock className="w-4 h-4" />
-          {clockLoading ? 'Processing...' : checkedIn ? 'Clock Out' : 'Clock In'}
+          {clockLoading ? 'Processing...' : clockedOutToday ? 'Clocked Out' : checkedIn ? 'Clock Out' : 'Clock In'}
         </button>
       </div>
 
@@ -158,12 +164,12 @@ export default function InternDashboard() {
         <div className="p-5 rounded-2xl glass-panel border border-[#2e254f]">
           <div className="flex items-center justify-between mb-3">
             <p className="text-xs font-semibold text-brand-muted uppercase tracking-wider">Attendance</p>
-            <div className={`p-2 rounded-lg ${checkedIn ? 'bg-emerald-500/10' : 'bg-slate-500/10'}`}>
-              <Calendar className={`w-4 h-4 ${checkedIn ? 'text-emerald-400' : 'text-slate-400'}`} />
+            <div className={`p-2 rounded-lg ${checkedIn ? 'bg-emerald-500/10' : clockedOutToday ? 'bg-indigo-500/10' : 'bg-slate-500/10'}`}>
+              <Calendar className={`w-4 h-4 ${checkedIn ? 'text-emerald-400' : clockedOutToday ? 'text-indigo-400' : 'text-slate-400'}`} />
             </div>
           </div>
-          <p className={`text-lg font-bold ${checkedIn ? 'text-emerald-400' : 'text-slate-400'}`}>
-            {checkedIn ? '✓ Clocked In' : '✗ Not Clocked In'}
+          <p className={`text-lg font-bold ${checkedIn ? 'text-emerald-400' : clockedOutToday ? 'text-indigo-400' : 'text-slate-400'}`}>
+            {checkedIn ? '✓ Clocked In' : clockedOutToday ? '✓ Clocked Out' : '✗ Not Clocked In'}
           </p>
           <p className="text-xs text-brand-muted mt-1">{attendance.length} logs this period</p>
         </div>
