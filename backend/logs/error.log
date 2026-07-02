@@ -1,0 +1,292 @@
+2026-07-01 15:09:18 [ERROR]: Failed to start server: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:06 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:12 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:17 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:25 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:29 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:33 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:39 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:46 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:50 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:53 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:20:58 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:01 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:07 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:10 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:13 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:16 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:19 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:29 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:32 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:35 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:37 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:39 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:21:42 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:22:46 [ERROR]: Failed to start server: Validation error
+Error
+    at Database.<anonymous> (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:185:27)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:50
+    at new Promise (<anonymous>)
+    at Query.run (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query.js:183:12)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:315:28
+    at async SQLiteQueryInterface.changeColumn (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\dialects\sqlite\query-interface.js:43:7)
+    at async User.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\model.js:984:11)
+    at async Sequelize.sync (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\sequelize\lib\sequelize.js:377:9)
+    at async startServer (D:\Joshitha\antigravity\internship-management-portal\backend\src\app.js:70:5)
+2026-07-01 15:43:30 [ERROR]: SyntaxError: Bad escaped character in JSON at position 9 (line 1 column 10)
+    at JSON.parse (<anonymous>)
+    at parse (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\raw-body\index.js:238:16)
+    at done (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\Joshitha\antigravity\internship-management-portal\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:508:28)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+2026-07-02 15:34:05 [ERROR]: Error: Already checked in today.
+    at createError (D:\Joshitha\antigravity\internship-management-portal\backend\src\middleware\errorHandler.js:43:15)
+    at checkIn (D:\Joshitha\antigravity\internship-management-portal\backend\src\controllers\attendanceController.js:10:31)
+2026-07-02 15:34:10 [ERROR]: Error: Already checked in today.
+    at createError (D:\Joshitha\antigravity\internship-management-portal\backend\src\middleware\errorHandler.js:43:15)
+    at checkIn (D:\Joshitha\antigravity\internship-management-portal\backend\src\controllers\attendanceController.js:10:31)
